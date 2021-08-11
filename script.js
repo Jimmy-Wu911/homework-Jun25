@@ -29,7 +29,7 @@ function getCoord(cityName) {
 
 function renderForecast(object,i) {
     var iconcode = object.weather[0].icon;
-    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
     var cardEl = $('<div>');
     cardEl.addClass('col');
     var dateEl = $('<div>');
@@ -65,7 +65,7 @@ function renderHistory() {
 
 
 function getWeather(lat,lon,cityName) {
-    var queryUrl = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon="+ lon + "&units=imperial&exclude=minutely,hourly&appid=" + weatherApiKey;
+    var queryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon="+ lon + "&units=imperial&exclude=minutely,hourly&appid=" + weatherApiKey;
     fetch(queryUrl)
     .then(function(res){
         return res.json();
@@ -75,7 +75,7 @@ function getWeather(lat,lon,cityName) {
         // var currTemp = data.temp;
         var forecast = data.daily;
         var iconcode = data.current.weather[0].icon;
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
         console.log(iconurl);
         $('.currCity').text(cityName);
         $('.currDate').text(day+"/"+month+"/"+year);
