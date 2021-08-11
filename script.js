@@ -12,7 +12,7 @@ var day = d.getDate();
 
 function getCoord(cityName) {
 
-    var queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + weatherApiKey;
+    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + weatherApiKey;
     
     fetch(queryUrl)
     .then(function(res){
